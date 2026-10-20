@@ -24,7 +24,7 @@
 
 // Connect to your existing Wi-Fi first.
 const char* WIFI_SSID = "ssid";
-const char* WIFI_PASSWORD = "pass";
+const char* WIFI_PASSWORD = "password";
 
 // If Wi-Fi connection fails, ESP32 creates a hotspot.
 const char* AP_SSID = "SMART-LAB";
