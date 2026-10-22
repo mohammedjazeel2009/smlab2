@@ -681,8 +681,8 @@ void setup() {
   pinMode(MQ2_AO_PIN, INPUT);
   pinMode(FLAME_PIN, INPUT);
 
-  pinMode(IR_A_PIN, INPUT);
-  pinMode(IR_B_PIN, INPUT);
+  pinMode(IR_A_PIN, INPUT_PULLUP);
+  pinMode(IR_B_PIN, INPUT_PULLUP);
 
   pinMode(BUZZER_PIN, OUTPUT);
 
@@ -761,7 +761,9 @@ void setup() {
 // =====================================================
 
 void loop() {
-
+  // Check door sensors frequently.
+  countPeople();
+  
   server.handleClient();
 
   unsigned long now = millis();
@@ -771,10 +773,5 @@ void loop() {
 
     lastSensorRead = now;
     readSensors();
-
   }
-
-  // Check door sensors frequently.
-  countPeople();
-
 }
